@@ -22,11 +22,16 @@ class _MainFeedState extends State<MainFeed> {
         value: MainFeedViewmodel(),
         child: Consumer<MainFeedViewmodel>(
           builder: (context, model, child) {
+            if (model.markers.isEmpty) {
+              model.getLocation(context);
+              model.getMarkers(context);
+            }
             return Stack(
               children: <Widget>[
                 GoogleMap(
                     mapType: MapType.normal,
-                    markers: model.getMarkers(),
+                    markers: model.markers,
+                    polylines: model.polyLines,
                     initialCameraPosition: model.splitLocation()),
                 Row(
                   children: <Widget>[
