@@ -26,7 +26,7 @@ class MarkerCreator {
         ),
         icon: free,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker1"));
         }));
     markers.add(Marker(
@@ -38,7 +38,7 @@ class MarkerCreator {
         ),
         icon: free,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker2"));
         }));
     markers.add(Marker(
@@ -50,7 +50,7 @@ class MarkerCreator {
         ),
         icon: free,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker3"));
         }));
     markers.add(Marker(
@@ -62,7 +62,7 @@ class MarkerCreator {
         ),
         icon: full,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker4"));
         }));
     markers.add(Marker(
@@ -74,7 +74,7 @@ class MarkerCreator {
         ),
         icon: full,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker5"));
         }));
     markers.add(Marker(
@@ -86,7 +86,7 @@ class MarkerCreator {
         ),
         icon: full,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker6"));
         }));
     markers.add(Marker(
@@ -98,19 +98,16 @@ class MarkerCreator {
         ),
         icon: full,
         onTap: () {
-          showBottomSheet(context);
+          initBottomSheet(context);
           showPolyline(MarkerId("Marker7"));
         }));
 
     return markers;
   }
 
-  void showBottomSheet(BuildContext context) {
-    Future<void> modalFuture = showModalBottomSheet<void>(
-        backgroundColor: Colors.transparent,
-        isScrollControlled: true,
-        context: context,
-        builder: (context) => MainFeedBottomSheet());
-    modalFuture.then((void value) => clearPolylinesCallback());
+  void initBottomSheet(BuildContext context) {
+    PersistentBottomSheetController modalFuture = showBottomSheet(
+        context: context, builder: (context) => MainFeedBottomSheet());
+    modalFuture.closed.then((value) => clearPolylinesCallback());
   }
 }

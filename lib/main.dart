@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Hotel Klient',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.indigo,
+          canvasColor: Colors.transparent,
         ),
         home: SplashScreen(),
       ),
