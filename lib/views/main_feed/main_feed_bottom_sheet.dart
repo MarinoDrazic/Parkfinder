@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parkfinder/views/add_a_vehicle/add_a_vehicle.dart';
 import 'package:parkfinder/views/book_now/book_now.dart';
 
 class MainFeedBottomSheet extends StatelessWidget {
@@ -128,7 +129,7 @@ class MainFeedBottomSheet extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => BookNow()),
+                      MaterialPageRoute(builder: (context) => AddACar()),
                     );
                   },
                   color: Colors.indigo,
