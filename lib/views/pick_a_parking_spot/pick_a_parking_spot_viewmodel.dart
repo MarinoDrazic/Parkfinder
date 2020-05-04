@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BookNowViewModel extends ChangeNotifier {
+class PickAParkingSpotViewModel extends ChangeNotifier {
   List<bool> selectedFloor = [
     false,
     false,

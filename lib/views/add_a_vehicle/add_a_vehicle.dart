@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:parkfinder/views/add_a_vehicle/add_a_vehicle_viewmodel.dart';
-import 'package:parkfinder/views/book_now/book_now.dart';
+import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot.dart';
 import 'package:provider/provider.dart';
 
 class AddACar extends StatelessWidget {
@@ -325,7 +325,8 @@ class AddACar extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => BookNow()),
+                            MaterialPageRoute(
+                                builder: (context) => PickAParkingSpot()),
                           );
                         },
                         color: Colors.indigo,

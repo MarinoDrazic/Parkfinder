@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:parkfinder/views/add_a_vehicle/add_a_vehicle.dart';
-import 'package:parkfinder/views/book_now/book_now.dart';
 
 class MainFeedBottomSheet extends StatelessWidget {
   const MainFeedBottomSheet({Key key}) : super(key: key);
