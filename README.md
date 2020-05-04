@@ -15,13 +15,13 @@ Might not be fully updated every time.
  - [x] Welcome screen
  - [x] Splash screen
  - [x] Main screen
- - [ ] Add vehicle
- - [ ] Booking detals
- - [ ] Find parking
+ - [x] Add vehicle
+ - [x] Booking detals
+ - [x] Find parking
  - [ ] Login
  - [ ] Registration
  - [ ] My profile
  - [ ] Parking code
  - [ ] Payment info
- - [ ] Pick Parking
+ - [x] Pick Parking
  - [ ] Update Profile
