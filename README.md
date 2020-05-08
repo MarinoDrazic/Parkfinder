@@ -21,7 +21,7 @@ Might not be fully updated every time.
  - [ ] Login
  - [ ] Registration
  - [ ] My profile
- - [ ] Parking code
- - [ ] Payment info
+ - [x] Parking code
+ - [x] Payment info
  - [x] Pick Parking
  - [ ] Update Profile
