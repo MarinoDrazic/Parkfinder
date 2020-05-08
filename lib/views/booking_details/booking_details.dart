@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
+import 'package:parkfinder/views/add_payment_info/add_payment_info.dart';
 import 'package:parkfinder/views/booking_details/booking_details_check.dart';
 import 'package:parkfinder/views/booking_details/booking_details_total.dart';
 import 'package:provider/provider.dart';
@@ -203,7 +204,7 @@ class BookingDetails extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => BookingDetails()),
+                              builder: (context) => AddPaymentInfo()),
                         );
                       },
                       color: Colors.indigo,
