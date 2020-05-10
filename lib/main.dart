@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.indigo,
           canvasColor: Colors.transparent,
         ),
+        initialRoute: Router.initialPage,
+        onGenerateRoute: Router.onGenerateRoute,
+        navigatorKey: Router.navigatorKey,
         home: SplashScreen(),
       ),
     );
