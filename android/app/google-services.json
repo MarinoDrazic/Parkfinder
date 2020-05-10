@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "98606862771",
+    "firebase_url": "https://parkfinder-275315.firebaseio.com",
+    "project_id": "parkfinder-275315",
+    "storage_bucket": "parkfinder-275315.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98606862771:android:aefc186b68eb958dcabbc6",
+        "android_client_info": {
+          "package_name": "com.example.parkfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98606862771-ca57565hqfkmj1fvlrhtgjjg5o39qqbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAbU5NGGTgZLcYtRqQ2gzY_-1jkfbbMWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98606862771-ca57565hqfkmj1fvlrhtgjjg5o39qqbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

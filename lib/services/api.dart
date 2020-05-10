@@ -1,6 +1,5 @@
 import 'package:http/http.dart' as http;
-
-import 'api_response.dart';
+import 'package:parkfinder/models/api_response.dart';
 
 class Api {
   static const APIBase = "http://192.168.42.71:8080/api/";

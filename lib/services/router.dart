@@ -5,6 +5,7 @@ import 'package:parkfinder/views/booking_details/booking_details.dart';
 import 'package:parkfinder/views/first_launch_screen/first_launch_screen.dart';
 import 'package:parkfinder/views/help/help.dart';
 import 'package:parkfinder/views/legal/legal.dart';
+import 'package:parkfinder/views/login/login.dart';
 import 'package:parkfinder/views/main_feed/main_feed.dart';
 import 'package:parkfinder/views/my_profile/my_profile.dart';
 import 'package:parkfinder/views/parking_codes/parking_codes.dart';
@@ -27,4 +28,5 @@ class $Router {
   SettingsView settingsView;
   PickAParkingSpot pickAParkingSpot;
   MainFeed mainFeed;
+  Login login;
 }

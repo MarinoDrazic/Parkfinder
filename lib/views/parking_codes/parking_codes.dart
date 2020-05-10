@@ -33,7 +33,7 @@ class _ParkingCodesState extends State<ParkingCodes>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 1300),
+      duration: const Duration(milliseconds: 1000),
       vsync: this,
     );
     _offsetAnimation = Tween<Offset>(begin: Offset(2, 0.0), end: Offset.zero)
@@ -41,12 +41,9 @@ class _ParkingCodesState extends State<ParkingCodes>
       parent: _controller,
       curve: Curves.elasticOut,
     ));
-    _offsetAnimation.addListener(() {
-      setState(() {});
-    });
-
-    _controller.forward();
-    _controller.forward();
+    _controller
+        .forward()
+        .then((value) => _foldingCellKey[0].currentState.toggleFold());
   }
 
   @override
