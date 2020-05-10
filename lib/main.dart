@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parkfinder/provider/provider_setup.dart';
-import 'package:parkfinder/views/splash_screen/splash_screen.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,10 +18,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.indigo,
           canvasColor: Colors.transparent,
         ),
-        initialRoute: Router.initialPage,
+        initialRoute: Router.splashScreen,
         onGenerateRoute: Router.onGenerateRoute,
         navigatorKey: Router.navigatorKey,
-        home: SplashScreen(),
       ),
     );
   }

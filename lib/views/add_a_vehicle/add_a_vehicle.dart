@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/add_a_vehicle/add_a_vehicle_viewmodel.dart';
 import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot.dart';
 import 'package:provider/provider.dart';
@@ -323,11 +324,7 @@ class AddACar extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.07,
                         minWidth: MediaQuery.of(context).size.width * 0.7,
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PickAParkingSpot()),
-                          );
+                          Router.navigator.pushNamed(Router.pickAParkingSpot);
                         },
                         color: Colors.indigo,
                         elevation: 6,

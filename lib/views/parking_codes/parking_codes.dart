@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/main_feed/main_feed.dart';
 import 'package:parkfinder/views/parking_codes/parking_codes_cell.dart';
 import 'package:parkfinder/views/parking_codes/parking_codes_viewmodel.dart';
@@ -178,11 +179,7 @@ class _ParkingCodesState extends State<ParkingCodes>
                             height: MediaQuery.of(context).size.height * 0.07,
                             minWidth: MediaQuery.of(context).size.width * 0.7,
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MainFeed()),
-                              );
+                              Router.navigator.pushNamed(Router.mainFeed);
                             },
                             color: Colors.indigo,
                             elevation: 6,

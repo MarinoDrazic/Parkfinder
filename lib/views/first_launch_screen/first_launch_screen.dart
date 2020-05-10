@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/main_feed/main_feed.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -49,11 +50,7 @@ class _FirstLaunchScreenState extends State<FirstLaunchScreen> {
                         padding: const EdgeInsets.all(24.0),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MainFeed()),
-                            );
+                            Router.navigator.pushNamed(Router.mainFeed);
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -132,10 +129,7 @@ class _FirstLaunchScreenState extends State<FirstLaunchScreen> {
                     right: 30,
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => MainFeed()),
-                        );
+                        Router.navigator.pushNamed(Router.mainFeed);
                       },
                       color: Colors.indigo,
                       textColor: Colors.white,

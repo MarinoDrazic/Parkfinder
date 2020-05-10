@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/add_payment_info/add_payment_info_viewmodel.dart';
 import 'package:parkfinder/views/parking_codes/parking_codes.dart';
 import 'package:provider/provider.dart';
@@ -121,11 +122,7 @@ class AddPaymentInfo extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.07,
                         minWidth: MediaQuery.of(context).size.width * 0.7,
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ParkingCodes()),
-                          );
+                          Router.navigator.pushNamed(Router.parkingCodes);
                         },
                         color: Colors.indigo,
                         elevation: 6,

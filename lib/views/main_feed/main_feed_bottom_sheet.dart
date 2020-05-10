@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/add_a_vehicle/add_a_vehicle.dart';
 
 class MainFeedBottomSheet extends StatelessWidget {
@@ -126,10 +127,7 @@ class MainFeedBottomSheet extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.07,
                   minWidth: MediaQuery.of(context).size.width * 0.7,
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AddACar()),
-                    );
+                    Router.navigator.pushNamed(Router.addACar);
                   },
                   color: Colors.indigo,
                   elevation: 6,

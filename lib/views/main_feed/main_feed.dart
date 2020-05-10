@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/drawer/inner_drawer.dart';
 import 'package:parkfinder/views/main_feed/main_feed_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -87,11 +88,14 @@ class _MainFeedState extends State<MainFeed> {
                             ),
                           ),
                         ),
-                        buildDrawerItem(Icons.portrait, "My Profile"),
-                        buildDrawerItem(Icons.credit_card, "Payment Pass"),
-                        buildDrawerItem(Icons.help, "Help"),
-                        buildDrawerItem(Icons.settings, "Settings"),
-                        buildDrawerItem(Icons.bookmark_border, "Payment Pass"),
+                        buildDrawerItem(
+                            Icons.portrait, "My Profile", Router.myprofile),
+                        buildDrawerItem(Icons.credit_card, "Payment Pass",
+                            Router.myprofile),
+                        buildDrawerItem(Icons.help, "Help", Router.help),
+                        buildDrawerItem(
+                            Icons.settings, "Settings", Router.settingsView),
+                        buildDrawerItem(Icons.info, "Legal", Router.legal),
                       ],
                     ),
                   ),
@@ -185,36 +189,41 @@ class _MainFeedState extends State<MainFeed> {
     );
   }
 
-  Padding buildDrawerItem(IconData icon, String text) {
+  Padding buildDrawerItem(IconData icon, String text, String routeName) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Card(
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Icon(
-                  icon,
-                  size: 32,
-                  color: Colors.indigo,
-                ),
-              ),
-              Spacer(flex: 1),
-              Text(
-                text,
-                style: TextStyle(
+      child: GestureDetector(
+        onTap: () {
+          Router.navigator.pushNamed(routeName);
+        },
+        child: Card(
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    icon,
+                    size: 32,
                     color: Colors.indigo,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24),
-              ),
-              Spacer(flex: 4),
-            ],
+                  ),
+                ),
+                Spacer(flex: 1),
+                Text(
+                  text,
+                  style: TextStyle(
+                      color: Colors.indigo,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24),
+                ),
+                Spacer(flex: 4),
+              ],
+            ),
           ),
         ),
       ),

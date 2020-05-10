@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:parkfinder/views/booking_details/booking_details.dart';
 import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot_table.dart';
 import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot_viewmodel.dart';
@@ -221,11 +222,7 @@ class _PickAParkingSpotState extends State<PickAParkingSpot> {
                     height: MediaQuery.of(context).size.height * 0.07,
                     minWidth: MediaQuery.of(context).size.width * 0.7,
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => BookingDetails()),
-                      );
+                      Router.navigator.pushNamed(Router.bookingDetails);
                     },
                     color: Colors.indigo,
                     elevation: 6,
