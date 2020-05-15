@@ -11,6 +11,7 @@ import 'package:parkfinder/views/my_profile/my_profile.dart';
 import 'package:parkfinder/views/parking_codes/parking_codes.dart';
 import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot.dart';
 import 'package:parkfinder/views/settings/settings_view.dart';
+import 'package:parkfinder/views/sign_up/sign_up.dart';
 import 'package:parkfinder/views/splash_screen/splash_screen.dart';
 
 @autoRouter
@@ -29,4 +30,5 @@ class $Router {
   PickAParkingSpot pickAParkingSpot;
   MainFeed mainFeed;
   Login login;
+  SignUp signUp;
 }

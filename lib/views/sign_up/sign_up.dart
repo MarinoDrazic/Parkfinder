@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:parkfinder/views/login/login_viewmodel.dart';
-import 'package:provider/provider.dart';
 import 'package:parkfinder/services/router.gr.dart';
+import 'package:parkfinder/views/sign_up/sign_up_viewmodel.dart';
+import 'package:provider/provider.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key key}) : super(key: key);
+class SignUp extends StatelessWidget {
+  const SignUp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ChangeNotifierProvider<LoginViewModel>.value(
-        value: LoginViewModel(),
-        child: Consumer<LoginViewModel>(builder: (context, model, child) {
+      body: ChangeNotifierProvider<SignUpViewmodel>.value(
+        value: SignUpViewmodel(),
+        child: Consumer<SignUpViewmodel>(builder: (context, model, child) {
           if (!model.listenerSetUp) {
             model.setUpListener();
           }
@@ -37,13 +37,57 @@ class Login extends StatelessWidget {
                     ),
                     Spacer(flex: 1),
                     Text(
-                      "Welcome Back!",
+                      "Get Started",
                       style: TextStyle(
                           fontSize: 24.0, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "Enter your information to continue",
+                      "Let's create your account!",
                       style: TextStyle(fontSize: 16.0, color: Colors.grey),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 32.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Colors.grey.withOpacity(0.1)),
+                        child: Row(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Icon(
+                                Icons.person,
+                                color: Colors.indigo,
+                                size: 32,
+                              ),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                controller: model.name,
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: 'Jotaro Kujo'),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Icon(
+                                model.firstTime
+                                    ? Icons.info
+                                    : model.validName
+                                        ? Icons.check_circle_outline
+                                        : Icons.cancel,
+                                color: model.firstTime
+                                    ? Colors.indigo
+                                    : model.validName
+                                        ? Colors.greenAccent
+                                        : Colors.redAccent,
+                                size: 32,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 32.0),
@@ -74,12 +118,12 @@ class Login extends StatelessWidget {
                               child: Icon(
                                 model.firstTime
                                     ? Icons.info
-                                    : model.emailValid
+                                    : model.validEmail
                                         ? Icons.check_circle_outline
                                         : Icons.cancel,
                                 color: model.firstTime
                                     ? Colors.indigo
-                                    : model.emailValid
+                                    : model.validEmail
                                         ? Colors.greenAccent
                                         : Colors.redAccent,
                                 size: 32,
@@ -111,7 +155,7 @@ class Login extends StatelessWidget {
                                 controller: model.password,
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText: '**********'),
+                                    hintText: '*********'),
                               ),
                             ),
                             Padding(
@@ -119,12 +163,12 @@ class Login extends StatelessWidget {
                               child: Icon(
                                 model.firstTime
                                     ? Icons.info
-                                    : model.passwordValid
+                                    : model.validPassword
                                         ? Icons.check_circle_outline
                                         : Icons.cancel,
                                 color: model.firstTime
                                     ? Colors.indigo
-                                    : model.passwordValid
+                                    : model.validPassword
                                         ? Colors.greenAccent
                                         : Colors.redAccent,
                                 size: 32,
@@ -137,7 +181,7 @@ class Login extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        model.showInvalidLoginMsg
+                        model.showSignUpFailed
                             ? Text(
                                 "Invalid login details",
                                 style: TextStyle(
@@ -153,12 +197,12 @@ class Login extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.07,
                           minWidth: MediaQuery.of(context).size.width * 0.7,
                           onPressed: () {
-                            model.login(context);
+                            model.register(context);
                           },
                           color: Colors.indigo,
                           elevation: 6,
                           textColor: Colors.white,
-                          child: Text("Login",
+                          child: Text("Get Started",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
@@ -173,15 +217,15 @@ class Login extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          "New User? ",
+                          "Already have an account? ",
                           style: TextStyle(fontSize: 16.0, color: Colors.grey),
                         ),
                         GestureDetector(
                           onTap: () {
-                            Router.navigator.pushNamed(Router.signUp);
+                            Router.navigator.pushNamed(Router.login);
                           },
                           child: Text(
-                            "Get Started",
+                            "Log in",
                             style: TextStyle(
                                 fontSize: 16.0, color: Colors.blueAccent),
                           ),

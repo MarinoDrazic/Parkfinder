@@ -42,15 +42,15 @@ class FirebaseAuthenticationService {
     BuildContext context,
   ) async {
     final FirebaseUser user = (await _auth.createUserWithEmailAndPassword(
-      email: 'an email',
-      password: 'a password',
+      email: email,
+      password: password,
     ))
         .user;
     if (user != null) {
       _currentUser = user;
       _saveUserDetails(email, password);
 
-      Provider.of<FirestoreService>(context).createUser(
+      Provider.of<FirestoreService>(context, listen: false).createUser(
           User(id: user.uid, email: email, fullName: fullName, userRole: role));
       return true;
     }

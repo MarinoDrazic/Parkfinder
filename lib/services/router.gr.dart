@@ -20,6 +20,7 @@ import 'package:parkfinder/views/settings/settings_view.dart';
 import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot.dart';
 import 'package:parkfinder/views/main_feed/main_feed.dart';
 import 'package:parkfinder/views/login/login.dart';
+import 'package:parkfinder/views/sign_up/sign_up.dart';
 
 class Router {
   static const splashScreen = '/';
@@ -35,6 +36,7 @@ class Router {
   static const pickAParkingSpot = '/pick-aparking-spot';
   static const mainFeed = '/main-feed';
   static const login = '/login';
+  static const signUp = '/sign-up';
   static GlobalKey<NavigatorState> get navigatorKey =>
       getNavigatorKey<Router>();
   static NavigatorState get navigator => navigatorKey.currentState;
@@ -157,6 +159,15 @@ class Router {
         final typedArgs = args as Key;
         return MaterialPageRoute(
           builder: (_) => Login(key: typedArgs),
+          settings: settings,
+        );
+      case Router.signUp:
+        if (hasInvalidArgs<Key>(args)) {
+          return misTypedArgsRoute<Key>(args);
+        }
+        final typedArgs = args as Key;
+        return MaterialPageRoute(
+          builder: (_) => SignUp(key: typedArgs),
           settings: settings,
         );
       default:
