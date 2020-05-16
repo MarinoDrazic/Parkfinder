@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:parkfinder/services/firebase_auth.dart';
+import 'package:parkfinder/services/router.gr.dart';
 import 'package:provider/provider.dart';
 
 class LoginViewModel extends ChangeNotifier {
@@ -37,6 +38,9 @@ class LoginViewModel extends ChangeNotifier {
         Provider.of<FirebaseAuthenticationService>(context, listen: false);
     showInvalidLoginMsg =
         !await firebaseAuthenticationService.signIn(email.text, password.text);
+    if (!showInvalidLoginMsg) {
+      Router.navigator.pushReplacementNamed(Router.myprofile);
+    }
     notifyListeners();
   }
 }

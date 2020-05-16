@@ -91,7 +91,7 @@ class _MainFeedState extends State<MainFeed> {
                         buildDrawerItem(
                             Icons.portrait, "My Profile", Router.myprofile),
                         buildDrawerItem(Icons.credit_card, "Payment Pass",
-                            Router.myprofile),
+                            Router.paymentPass),
                         buildDrawerItem(Icons.help, "Help", Router.help),
                         buildDrawerItem(
                             Icons.settings, "Settings", Router.settingsView),

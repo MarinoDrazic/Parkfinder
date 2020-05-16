@@ -9,6 +9,7 @@ import 'package:parkfinder/views/login/login.dart';
 import 'package:parkfinder/views/main_feed/main_feed.dart';
 import 'package:parkfinder/views/my_profile/my_profile.dart';
 import 'package:parkfinder/views/parking_codes/parking_codes.dart';
+import 'package:parkfinder/views/payment_pass/payment_pass.dart';
 import 'package:parkfinder/views/pick_a_parking_spot/pick_a_parking_spot.dart';
 import 'package:parkfinder/views/settings/settings_view.dart';
 import 'package:parkfinder/views/sign_up/sign_up.dart';
@@ -31,4 +32,5 @@ class $Router {
   MainFeed mainFeed;
   Login login;
   SignUp signUp;
+  PaymentPass paymentPass;
 }

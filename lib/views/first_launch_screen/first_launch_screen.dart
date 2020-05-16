@@ -22,6 +22,7 @@ class _FirstLaunchScreenState extends State<FirstLaunchScreen> {
           controller: controller,
           children: <Widget>[
             Container(
+              color: Colors.white,
               child: Column(
                 children: <Widget>[
                   Spacer(
@@ -68,6 +69,7 @@ class _FirstLaunchScreenState extends State<FirstLaunchScreen> {
               ),
             ),
             Container(
+              color: Colors.white,
               child: Column(
                 children: <Widget>[
                   Spacer(
@@ -97,6 +99,7 @@ class _FirstLaunchScreenState extends State<FirstLaunchScreen> {
               ),
             ),
             Container(
+              color: Colors.white,
               child: Stack(
                 children: <Widget>[
                   Column(
