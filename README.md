@@ -29,12 +29,12 @@ Might not be fully updated every time.
  - [ ] Settings
  
 # What I learned by building this
-I sould use BLoC...<br/>
-Just becouse it has 1k+ claps on Medium does not mean its good state managment solution.<br/>
+I should use BLoC...<br/>
+Just because it has 1k+ claps on Medium does not mean its good state management solution.<br/>
 Transform widget is very cool.<br/>
 I should use more modular approach to widgets (I'm looking at you navbar).<br/>
-I should get a Job as flutter dev and steal seniors ideas about state managment.<br/>
+I should get a Job as flutter dev and steal seniors ideas about state management.<br/>
 Payment gateways with square are super simple.<br/>
-DropDown lists are wierd.<br/>
+Drawdown lists are weird.<br/>
 Animations are not that hard.<br/>
-Its soo much easier then native android or Ionic+Angular or Cordova+whatever.<br/>
+Its soo much easier than native android or Ionic+Angular or Cordova+whatever.<br/>
