@@ -18,10 +18,23 @@ Might not be fully updated every time.
  - [x] Add vehicle
  - [x] Booking detals
  - [x] Find parking
- - [ ] Login
- - [ ] Registration
- - [ ] My profile
+ - [x] Login
+ - [x] Registration
+ - [x] My profile
  - [x] Parking code
  - [x] Payment info
  - [x] Pick Parking
- - [ ] Update Profile
+ - [x] Update Profile
+ - [ ] Search
+ - [ ] Settings
+ 
+# What I learned by building this
+I sould use BLoC...
+Just becouse it has 1k+ claps on Medium does not mean its good state managment solution.
+Transform widget is very cool.
+I should use more modular approach to widgets (I'm looking at you navbar).
+I should get a Job as flutter dev and steal seniors ideas about state managment.
+Payment gateways with square are super simple.
+DropDown lists are wierd.
+Animations are not that hard.
+Its soo much easier then native android or Ionic+Angular or Cordova+whatever.
